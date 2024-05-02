@@ -12,10 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Flavor": {
+    "Name": {
       "type": "string"
     },
-    "Name": {
+    "Flavor": {
       "type": "string"
     },
     "Description": {

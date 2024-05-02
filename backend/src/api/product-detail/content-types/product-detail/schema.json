@@ -15,12 +15,6 @@
     "Name": {
       "type": "string"
     },
-    "Cost": {
-      "type": "decimal"
-    },
-    "Size": {
-      "type": "text"
-    },
     "Description": {
       "type": "blocks"
     },
