@@ -10,8 +10,8 @@ const QUERY = gql`
       data {
         id
         attributes {
-          Flavor
-          Name
+          ProductName
+          ProductFlavor
           Description
           Image {
             data {
@@ -53,12 +53,12 @@ function ProductCard({ data }) {
             style={{ color: '#808080' }} // Apply inline style for light color
             href={`/product/${data.id}`}
         >
-          {data.attributes.Flavor}<br />
+          {data.attributes.ProductFlavor}<br />
         </Link>
         <div style={{ display: 'flex', alignItems: 'center' }}>
         <div className={Style.highlight}
            style={{ marginRight: '8px' ,'--hover-textDecoration': "underline" }}>
-            {data.attributes.Name} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            {data.attributes.ProductName} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </div>
           {/* <div
   className={`${Style.highlight} ${data.attributes.Name ? Style.highlightContent : ''}`}
@@ -117,7 +117,7 @@ function ProductList(props) {
   const products = data && data.products && data.products.data ? data.products.data : [];
 
   const searchQuery = products.filter((product) =>
-    product.attributes.Name.toLowerCase().includes(props.query.toLowerCase())
+    product.attributes.ProductName.toLowerCase().includes(props.query.toLowerCase())
   );
 
   return (
